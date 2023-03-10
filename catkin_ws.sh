@@ -1,14 +1,5 @@
 #!/bin/bash
+# Bash script to run the ros_carla_test only (for now)
 
-source /opt/ros/melodic/setup.bash
-source ~/catkin_ws/devel/setup.bash
-
-cd ~/catkin_ws
-
-gnome-terminal --tab -- bash -c "cd ~/catkin_ws;source /opt/ros/melodic/setup.bash;source ~/catkin_ws/devel/setup.bash; exec bash"
-
-gnome-terminal --tab -- bash -c "cd ~/catkin_ws;source /opt/ros/melodic/setup.bash;source ~/catkin_ws/devel/setup.bash;roscore; exec bash"
-
-rospack find carla_ros_connect
-
-#rosrun carla_ros_connect ros_carla_test.py 
+gnome-terminal --tab -- bash -c "cd ~/Documents/ROs1-URAP/catkin_ws ; source /opt/ros/melodic/setup.bash ; roscore ; exec bash"
+gnome-terminal --tab -- bash -c "cd ~/Documents/ROS1-URAP/catkin_ws ; sleep 5 ; source /opt/ros/melodic/setup.bash ; source ~/Documents/ROS1-URAP/catkin_ws/devel/setup.bash ; rosrun ros_carla_sumo_integration ros_carla_test.py ; exec bash"
